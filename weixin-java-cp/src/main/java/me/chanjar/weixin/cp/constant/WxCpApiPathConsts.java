@@ -135,7 +135,7 @@ public interface WxCpApiPathConsts {
     /**
      * The constant GET_USER_INFO.
      */
-    String GET_USER_INFO = "/cgi-bin/user/getuserinfo?code=%s&agentid=%d";
+    String GET_USER_INFO = "/cgi-bin/auth/getuserinf?code=%s&agentid=%d";
     /**
      * The constant GET_SCHOOL_USER_INFO.
      */
@@ -143,7 +143,7 @@ public interface WxCpApiPathConsts {
     /**
      * The constant GET_USER_DETAIL.
      */
-    String GET_USER_DETAIL = "/cgi-bin/user/getuserdetail";
+    String GET_USER_DETAIL = "/cgi-bin/auth/getuserdetail";
     /**
      * The constant URL_OAUTH2_AUTHORIZE.
      */
