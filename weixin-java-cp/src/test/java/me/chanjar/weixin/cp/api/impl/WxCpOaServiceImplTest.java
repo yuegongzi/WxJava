@@ -195,7 +195,7 @@ public class WxCpOaServiceImplTest {
    */
   @Test
   public void testGetApprovalDetail() throws WxErrorException {
-    String spNo = "201912020001";
+    String spNo = "202308050013";
     WxCpApprovalDetailResult result = wxService.getOaService().getApprovalDetail(spNo);
 
     assertThat(result).isNotNull();

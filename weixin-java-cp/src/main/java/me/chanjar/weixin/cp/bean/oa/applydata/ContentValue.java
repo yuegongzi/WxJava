@@ -50,6 +50,10 @@ public class ContentValue implements Serializable {
   @SerializedName("punch_correction")
   private PunchCorrection punchCorrection;
 
+  private Location location;
+  private Formula formula;
+  private Phone phonenumber;
+
   /**
    * The type Date.
    */
@@ -216,5 +220,29 @@ public class ContentValue implements Serializable {
     private String state;
     private Long time;
   }
+
+  @Data
+  public static class Location implements  Serializable{
+    private static final long serialVersionUID = 2120523160034749171L;
+    private String title;
+    private String address;
+    private Long time;
+    private Double latitude;
+    private Double longitude;
+  }
+
+  @Data
+  public static class Formula implements  Serializable{
+    private static final long serialVersionUID = 2120523160034749172L;
+    private Double value;
+  }
+
+  @Data
+  public static class Phone implements  Serializable{
+    private static final long serialVersionUID = 2120523160034749173L;
+    private String area;
+    private String  number;
+  }
+
 
 }
