@@ -47,7 +47,7 @@ public class WxCpApprovalDetailResult implements Serializable {
      * 申请单状态：1-审批中；2-已通过；3-已驳回；4-已撤销；6-通过后撤销；7-已删除；10-已支付
      */
     @SerializedName("sp_status")
-    private WxCpSpStatus spStatus;
+    private Integer spStatus;
 
     /**
      * 审批模板id。可在“获取审批申请详情”、“审批状态变化回调通知”中获得，也可在审批模板的模板编辑页面链接中获得。

@@ -17,7 +17,7 @@ public class WxCpApprovalRecord implements Serializable {
   private static final long serialVersionUID = -327230786004105887L;
 
   @SerializedName("sp_status")
-  private WxCpRecordSpStatus status;
+  private Integer status;
 
   @SerializedName("approverattr")
   private WxCpApproverAttr approverAttr;
