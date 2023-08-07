@@ -31,7 +31,7 @@ public class WxCpApprovalRecordDetail implements Serializable {
    * 分支审批人审批状态
    */
   @SerializedName("sp_status")
-  private WxCpRecordSpStatus spStatus;
+  private Integer spStatus;
 
   /**
    * 节点分支审批人审批操作时间戳，0表示未操作
