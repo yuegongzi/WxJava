@@ -51,7 +51,7 @@ public class WxCpOpenApprovalData implements Serializable {
   @SerializedName("NotifyNodes")
   private NotifyNodes notifyNodes;
 
-  @SerializedName("ApproverStep")
+  @SerializedName("approverstep")
   private Integer approverStep;
 
   /**
