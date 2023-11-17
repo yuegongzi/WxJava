@@ -38,7 +38,7 @@ public class WxCpCorpGroupServiceImpl implements WxCpCorpGroupService {
     String responseContent = this.cpService.post(url, jsonObject);
     JsonObject tmpJson = GsonParser.parse(responseContent);
 
-    return WxCpGsonBuilder.create().fromJson(tmpJson.get("corp_list"),
+    return WxCpGsonBuilder.create().fromJson(tmpJson,
       new TypeToken<WxCpCorpGroupCorpListAppShareInfoResp>() {
       }.getType()
     );
