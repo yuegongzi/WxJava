@@ -67,14 +67,23 @@ public class WxCpAgentWorkBenchImplTest {
    */
   @DataProvider
   public Object[][] template() {
+    List<WorkBenchKeyData> keyDataList = new ArrayList<>();
+    WorkBenchKeyData w1 = new WorkBenchKeyData();
+    w1.setKey("待审批");
+    w1.setData("-");
+    w1.setJumpUrl("https://apps.ejiexi.com/order");
+    WorkBenchKeyData w2 = new WorkBenchKeyData();
+    w2.setKey("-");
+    w2.setData("15");
+    w2.setJumpUrl("https://apps.ejiexi.com/order");
+    keyDataList.add(w1);
+    keyDataList.add(w2);
     return new Object[][]{
       {WxCpAgentWorkBench.builder()
-        .agentId(1000011L)
+        .agentId(1000022L)
         .replaceUserData(true)
-        .type(WxCpConsts.WorkBenchType.IMAGE)
-        .url("http://www.qq.com")
-        .jumpUrl("http://www.qq.com")
-        .pagePath("pages/index")
+        .type(WxCpConsts.WorkBenchType.KEYDATA)
+        .keyDataList(keyDataList)
         .build()
       },
     };
@@ -87,14 +96,26 @@ public class WxCpAgentWorkBenchImplTest {
    */
   @DataProvider
   public Object[][] userDatas() {
+    List<WorkBenchKeyData> keyDataList = new ArrayList<>();
+    WorkBenchKeyData w1 = new WorkBenchKeyData();
+    w1.setKey("待审批");
+    w1.setData("5");
+    w1.setJumpUrl("https://apps.ejiexi.com/order");
+    WorkBenchKeyData w2 = new WorkBenchKeyData();
+    w2.setKey("已审批");
+    w2.setData("15");
+    w2.setJumpUrl("https://apps.ejiexi.com/order");
+    keyDataList.add(w1);
+    keyDataList.add(w2);
     return new Object[][]{
       {WxCpAgentWorkBench.builder()
-        .agentId(1000011L)
-        .userId("HaHa")
-        .type(WxCpConsts.WorkBenchType.IMAGE)
-        .url("http://www.qq.com")
-        .jumpUrl("http://www.qq.com")
-        .pagePath("pages/index")
+        .agentId(1000022L)
+        .userId("YangAnFu")
+        .type(WxCpConsts.WorkBenchType.KEYDATA)
+//        .url("https://apps.ejiexi.com/order")
+//        .jumpUrl("https://apps.ejiexi.com/order")
+        .keyDataList(keyDataList)
+//        .pagePath("pages/index")
         .build()
       },
     };

@@ -26,7 +26,7 @@ public class WxCpCorpGroupServiceImpl implements WxCpCorpGroupService {
   private final WxCpService cpService;
 
   @Override
-  public List<WxCpCorpGroupCorp> listAppShareInfo(Integer agentId, Integer businessType, String corpId,
+  public WxCpCorpGroupCorpListAppShareInfoResp listAppShareInfo(Integer agentId, Integer businessType, String corpId,
                                                   Integer limit, String cursor) throws WxErrorException {
     final String url = this.cpService.getWxCpConfigStorage().getApiUrl(LIST_SHARE_APP_INFO);
     JsonObject jsonObject = new JsonObject();
@@ -39,7 +39,7 @@ public class WxCpCorpGroupServiceImpl implements WxCpCorpGroupService {
     JsonObject tmpJson = GsonParser.parse(responseContent);
 
     return WxCpGsonBuilder.create().fromJson(tmpJson.get("corp_list"),
-      new TypeToken<List<WxCpCorpGroupCorpListAppShareInfoResp>>() {
+      new TypeToken<WxCpCorpGroupCorpListAppShareInfoResp>() {
       }.getType()
     );
   }

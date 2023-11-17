@@ -65,7 +65,7 @@ public class WxCpDepartmentServiceImplTest {
   @Test(dataProvider = "departIds")
   public void testList(Long id) throws Exception {
     System.out.println("=================获取部门");
-    List<WxCpDepart> departList = this.wxCpService.getDepartmentService().list(id);
+    List<WxCpDepart> departList = this.wxCpService.getDepartmentService().list(null);
     assertThat(departList).isNotEmpty();
     for (WxCpDepart g : departList) {
       this.depart = g;

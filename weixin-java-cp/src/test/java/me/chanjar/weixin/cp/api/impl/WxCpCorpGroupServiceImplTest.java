@@ -5,6 +5,7 @@ import me.chanjar.weixin.common.error.WxErrorException;
 import me.chanjar.weixin.cp.api.ApiTestModule;
 import me.chanjar.weixin.cp.api.WxCpService;
 import me.chanjar.weixin.cp.bean.corpgroup.WxCpCorpGroupCorp;
+import me.chanjar.weixin.cp.bean.corpgroup.WxCpCorpGroupCorpListAppShareInfoResp;
 import org.testng.annotations.Guice;
 import org.testng.annotations.Test;
 
@@ -27,7 +28,7 @@ public class WxCpCorpGroupServiceImplTest {
     String corpId = null;
     Integer limit = null;
     String cursor = null;
-    List<WxCpCorpGroupCorp> resp = wxService.getCorpGroupService().listAppShareInfo(agentId, businessType, corpId, limit, cursor);
+    WxCpCorpGroupCorpListAppShareInfoResp resp = wxService.getCorpGroupService().listAppShareInfo(agentId, businessType, corpId, limit, cursor);
     assertNotNull(resp);
   }
 }
