@@ -23,11 +23,11 @@ public interface WxCpAgentWorkBenchService {
   /**
    * Gets work bench template.
    *
-   * @param agentid the agentid
+   * @param agentId the agentId
    * @return the work bench template
    * @throws WxErrorException the wx error exception
    */
-  String getWorkBenchTemplate(Long agentid) throws WxErrorException;
+  String getWorkBenchTemplate(Integer agentId) throws WxErrorException;
 
   /**
    * Sets work bench data.

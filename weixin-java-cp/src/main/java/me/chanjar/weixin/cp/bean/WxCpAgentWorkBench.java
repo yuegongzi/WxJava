@@ -36,7 +36,7 @@ public class WxCpAgentWorkBench implements Serializable {
   /**
    * 应用id
    */
-  private Long agentId;
+  private Integer agentId;
   /**
    * 点击跳转url，若不填且应用设置了主页url，则跳转到主页url，否则跳到应用会话窗口
    */
@@ -49,6 +49,15 @@ public class WxCpAgentWorkBench implements Serializable {
    * 图片url:图片的最佳比例为3.35:1;webview:渲染展示的url
    */
   private String url;
+  /**
+   * 高度。可以有两种选择：single_row与double_row。当为single_row时，高度与关键数据型一致，当为double_row时，高度固定为170px。默认值为double_row
+   */
+  private String height;
+  // 控制是否隐藏标题
+  private boolean hideTitle;
+
+  // 控制是否启用WebView点击功能
+  private boolean enableWebviewClick;
   /**
    * 是否覆盖用户工作台的数据。设置为true的时候，会覆盖企业所有用户当前设置的数据。若设置为false,则不会覆盖用户当前设置的所有数据
    */
@@ -135,6 +144,9 @@ public class WxCpAgentWorkBench implements Serializable {
         webview.addProperty("url", this.url);
         webview.addProperty("jump_url", this.jumpUrl);
         webview.addProperty("pagepath", this.pagePath);
+        webview.addProperty("height",this.height);
+        webview.addProperty("hide_title",this.hideTitle);
+        webview.addProperty("enable_webview_click",this.enableWebviewClick);
         templateObject.add("webview", webview);
         break;
       }

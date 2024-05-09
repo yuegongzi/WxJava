@@ -26,7 +26,7 @@ public class WxCpAgentWorkBenchServiceImpl implements WxCpAgentWorkBenchService 
   }
 
   @Override
-  public String getWorkBenchTemplate(Long agentId) throws WxErrorException {
+  public String getWorkBenchTemplate(Integer agentId) throws WxErrorException {
     final String url = String.format(this.mainService.getWxCpConfigStorage().getApiUrl(WORKBENCH_TEMPLATE_GET));
     JsonObject jsonObject = new JsonObject();
     jsonObject.addProperty("agentid", agentId);

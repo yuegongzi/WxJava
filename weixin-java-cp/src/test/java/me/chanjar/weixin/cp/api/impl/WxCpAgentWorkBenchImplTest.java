@@ -45,7 +45,7 @@ public class WxCpAgentWorkBenchImplTest {
    */
   @Test
   public void testTemplateGet() throws WxErrorException {
-    String result = this.wxCpService.getWorkBenchService().getWorkBenchTemplate(1000011L);
+    String result = this.wxCpService.getWorkBenchService().getWorkBenchTemplate(1000011);
     System.out.println("获取工作台模板设置：" + result);
   }
 
@@ -80,9 +80,11 @@ public class WxCpAgentWorkBenchImplTest {
     keyDataList.add(w2);
     return new Object[][]{
       {WxCpAgentWorkBench.builder()
-        .agentId(1000022L)
+        .agentId(1000022)
         .replaceUserData(true)
-        .type(WxCpConsts.WorkBenchType.KEYDATA)
+        .hideTitle(true)
+        .url("https://apps.ejiexi.com/order")
+        .type(WxCpConsts.WorkBenchType.WEBVIEW)
         .keyDataList(keyDataList)
         .build()
       },
@@ -109,7 +111,7 @@ public class WxCpAgentWorkBenchImplTest {
     keyDataList.add(w2);
     return new Object[][]{
       {WxCpAgentWorkBench.builder()
-        .agentId(1000022L)
+        .agentId(1000022)
         .userId("YangAnFu")
         .type(WxCpConsts.WorkBenchType.KEYDATA)
 //        .url("https://apps.ejiexi.com/order")
@@ -129,7 +131,7 @@ public class WxCpAgentWorkBenchImplTest {
   @Test
   public void testKeyDataTemplateSet() throws WxErrorException {
     WxCpAgentWorkBench template = new WxCpAgentWorkBench();
-    template.setAgentId(1000011L);
+    template.setAgentId(1000011);
     template.setType(WxCpConsts.WorkBenchType.KEYDATA);
     List<WorkBenchKeyData> workBenchKeyDataList = new ArrayList<>();
     for (int i = 1; i < 4; i++) {
@@ -153,7 +155,7 @@ public class WxCpAgentWorkBenchImplTest {
   @Test
   public void testKeyDataUserDataSet() throws WxErrorException {
     WxCpAgentWorkBench template = new WxCpAgentWorkBench();
-    template.setAgentId(1000011L);
+    template.setAgentId(1000011);
     template.setUserId("HaHa");
     template.setType(WxCpConsts.WorkBenchType.KEYDATA);
     List<WorkBenchKeyData> workBenchKeyDataList = new ArrayList<>();
@@ -175,7 +177,7 @@ public class WxCpAgentWorkBenchImplTest {
   @Test
   public void testListTemplateSet() throws WxErrorException {
     WxCpAgentWorkBench template = new WxCpAgentWorkBench();
-    template.setAgentId(1000011L);
+    template.setAgentId(1000011);
     template.setType(WxCpConsts.WorkBenchType.LIST);
     List<WorkBenchList> workBenchListArray = new ArrayList<>();
     for (int i = 0; i < 2; i++) {
